@@ -1,0 +1,99 @@
+*split-duplicator.txt*  Duplicate text to splits and open in WezTerm
+
+==============================================================================
+CONTENTS                                           *split-duplicator-contents*
+
+    1. Introduction ................. |split-duplicator-introduction|
+    2. Usage ....................... |split-duplicator-usage|
+    3. Configuration ............... |split-duplicator-configuration|
+    4. Commands .................... |split-duplicator-commands|
+    5. Mappings .................... |split-duplicator-mappings|
+    6. Functions ................... |split-duplicator-functions|
+    7. License ..................... |split-duplicator-license|
+
+==============================================================================
+1. INTRODUCTION                                *split-duplicator-introduction*
+
+Split Duplicator provides two main features:
+- Duplicate text to a new split window
+- Open the current file in WezTerm with auto-reload
+
+==============================================================================
+2. USAGE                                              *split-duplicator-usage*
+
+Duplicate to Split~
+Use <Leader>ds in normal mode to duplicate the current line and surrounding
+lines to a new split window. In visual mode, it duplicates the selected text.
+
+Open in WezTerm~
+Use <Leader>wt to open the current file in a new WezTerm window with
+auto-reload enabled. The new window will focus on the current line or visual
+selection.
+
+==============================================================================
+3. CONFIGURATION                              *split-duplicator-configuration*
+
+g:split_duplicator_no_mappings~
+    Set to 1 to disable default mappings.
+    Default: 0
+
+g:split_duplicator_editor~
+    Set the editor command for WezTerm.
+    Default: 'nvim' if available, otherwise 'vim'
+
+g:split_duplicator_terminal~
+    Set the terminal command.
+    Default: 'wezterm start --'
+
+==============================================================================
+4. COMMANDS                                        *split-duplicator-commands*
+
+:DuplicateToSplit [count]~
+    Duplicate current line +/- [count] lines to a new split.
+    In visual mode, duplicates the selected lines.
+
+:OpenInWezTerm [count]~
+    Open current file in WezTerm, focusing on current line +/- [count] lines.
+    In visual mode, focuses on the selected lines.
+
+==============================================================================
+5. MAPPINGS                                        *split-duplicator-mappings*
+
+Default mappings (unless g:split_duplicator_no_mappings is set):
+
+Normal mode:
+    <Leader>ds - Duplicate to split
+    <Leader>wt - Open in WezTerm
+
+Visual mode:
+    <Leader>ds - Duplicate selection to split
+    <Leader>wt - Open selection in WezTerm
+
+Custom mappings:
+    To define custom mappings, map to the <Plug> mappings:
+    <Plug>SplitDuplicatorDuplicate
+    <Plug>SplitDuplicatorWezTerm
+
+Example:
+    nmap <F5> <Plug>SplitDuplicatorDuplicate
+    vmap <F5> <Plug>SplitDuplicatorDuplicate
+    nmap <F6> <Plug>SplitDuplicatorWezTerm
+    vmap <F6> <Plug>SplitDuplicatorWezTerm
+
+==============================================================================
+6. FUNCTIONS                                      *split-duplicator-functions*
+
+split_duplicator#duplicate_to_split({count})~
+    Function to duplicate text to a split window.
+    {count} is the number of lines above and below the cursor to include.
+
+split_duplicator#open_in_wezterm({count})~
+    Function to open the current file in WezTerm.
+    {count} is the number of lines above and below the cursor to include.
+
+==============================================================================
+7. LICENSE                                          *split-duplicator-license*
+
+Same as Vim (see |license|)
+
+vim:tw=78:ts=8:ft=help:norl:
