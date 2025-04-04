@@ -9,16 +9,24 @@ A Vim plugin that provides two main features:
 ### Using a plugin manager (recommended)
 
 #### [vim-plug](https://github.com/junegunn/vim-plug)
-Plug 'yourusername/split-duplicator'
+```sh
+Plug 'Imam-f/split-duplicator'
+```
 
 #### [Vundle](https://github.com/VundleVim/Vundle.vim)
-Plugin 'yourusername/split-duplicator'
+```sh
+Plugin 'Imam-f/split-duplicator'
+```
 
 #### [NeoBundle](https://github.com/Shougo/neobundle.vim)
-NeoBundle 'yourusername/split-duplicator'
+```sh
+NeoBundle 'Imam-f/split-duplicator'
+```
 
 #### [Pathogen](https://github.com/tpope/vim-pathogen)
-git clone https://github.com/yourusername/split-duplicator.git ~/.vim/bundle/split-duplicator
+```sh
+git clone https://github.com/Imam-f/split-duplicator.git ~/.vim/bundle/split-duplicator
+```
 
 ### Manual installation
 
